@@ -9,8 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +17,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ContactClassicTest {
 
@@ -48,7 +46,7 @@ public class ContactClassicTest {
             driver.get("https://work.weixin.qq.com/wework_admin/frame");
 
             ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-            TypeReference typeReference = new TypeReference<List<HashMap<String, Object>>>() {
+            TypeReference<List<HashMap<String, Object>>> typeReference = new TypeReference<List<HashMap<String, Object>>>() {
             };
 
             List<HashMap<String, Object>> cookies = mapper.readValue(file, typeReference);

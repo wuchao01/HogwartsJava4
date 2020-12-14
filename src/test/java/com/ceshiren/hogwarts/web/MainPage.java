@@ -3,7 +3,6 @@ package com.ceshiren.hogwarts.web;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
@@ -45,7 +44,7 @@ public class MainPage extends BasePage {
             driver.get("https://work.weixin.qq.com/wework_admin/frame");
 
             ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-            TypeReference typeReference = new TypeReference<List<HashMap<String, Object>>>() {
+            TypeReference<List<HashMap<String, Object>>> typeReference = new TypeReference<List<HashMap<String, Object>>>() {
             };
 
             List<HashMap<String, Object>> cookies = mapper.readValue(file, typeReference);
